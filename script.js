@@ -6,6 +6,8 @@ const hearts = document.getElementsByClassName('fa-heart');
 const score = document.createElement("h1");
 const scoreNumber = document.createElement("h1");
 const refreshButton = document.querySelector('.refresh-button');
+score.classList.add("score");
+scoreNumber.classList.add("score-number");
 
 let remainingHearts = hearts.length;
 let scores = 0;
@@ -14,20 +16,6 @@ document.body.appendChild(score);
 score.textContent="Score:"
 document.body.appendChild(scoreNumber);
 scoreNumber.textContent=`${scores}`
-
-const scoreResp = (x)=>{
-    if (x.matches) {
-        score.style="position:absolute;top:10%;left:5%;";
-        scoreNumber.style="position:absolute;top:10%;left:26%;color:yellow;";
-    } else {
-        score.style="position:absolute;top:0;left:5%;";
-        scoreNumber.style="position:absolute;top:0;left:14%;color:yellow;";
-    }
-  }
-  
-  var x = window.matchMedia("(max-width: 768px)")
-  scoreResp(x) 
-  x.addEventListener(scoreResp)
 
 const refreshPage = () => {
   location.reload();
