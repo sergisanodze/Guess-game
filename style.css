@@ -35,6 +35,8 @@ html{
     right: 5%;
 }.refresh-button{
     display: none;
+}.guess-button{
+    display: none;
 }.container{
     max-width: 1000px;
     display: flex;
@@ -48,6 +50,9 @@ html{
 }.fa-rotate-right{
     color: white;
     animation: rotate 2s ease infinite;
+}.fa-dice{
+    color: white;
+    animation: play 1s ease infinite;
 }.score{
     position:absolute;
     top:0%;

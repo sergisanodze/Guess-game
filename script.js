@@ -1,16 +1,16 @@
-const min = 1;
-const max = 10;
-
 const button = document.getElementsByClassName('button')[0];
 const hearts = document.getElementsByClassName('fa-heart');
 const score = document.createElement("h1");
 const scoreNumber = document.createElement("h1");
 const refreshButton = document.querySelector('.refresh-button');
+const guessButton = document.querySelector('.guess-button');
+const answerText = document.createElement("h1");
 score.classList.add("score");
 scoreNumber.classList.add("score-number");
 
 let remainingHearts = hearts.length;
 let scores = 0;
+let randomNum;
 
 document.body.appendChild(score);
 score.textContent="Score:"
@@ -22,9 +22,16 @@ const refreshPage = () => {
 }
 refreshButton.addEventListener('click', refreshPage)
 
-button.addEventListener('click',()=>{
-    const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-    const user = prompt("Guess the number from 1 to 10");
+button.addEventListener('click',() =>{
+    const min = 1;
+    const max = 20;
+    randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+    guessButton.style.display = "block"
+    button.style.display = "none"
+});
+
+guessButton.addEventListener('click',()=>{
+    const user = prompt("Guess the number from 1 to 20");
 
     if(user == randomNum){
         alert("You've got it! :)");
@@ -36,7 +43,7 @@ button.addEventListener('click',()=>{
             }
             heart.style.color = "red";
         }
-    }else if(user < 1 || user > 10){
+    }else if(user < 1 || user > 20){
         alert("please enter a number from 1 to 10");
     }else{
         alert("Nope :(");
@@ -49,6 +56,10 @@ button.addEventListener('click',()=>{
             button.disabled = true;
             refreshButton.style.display = "block";
             button.style.display = "none";
+            guessButton.style.display = "none";
+            document.body.appendChild(answerText);
+            answerText.style = "display:block;color:white;"
+            answerText.textContent = `it was ${randomNum}`
         }
     }
 });
