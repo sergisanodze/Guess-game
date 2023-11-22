@@ -78,10 +78,21 @@ html{
     100%{
         transform: rotate(0);
     }
+}@media (max-width: 1620px){
+    .score-number{
+        top:0%;
+        left:20%;
+    }
+}@media (max-width: 996px){
+    .score-number{
+        top:0%;
+        left:25%;
+    }
 }
 @media (max-width: 768px){
     .content{
         display: flex;
+        padding-bottom: 20px;
     }i{
         font-size: 24px;
     }h1{
@@ -92,5 +103,25 @@ html{
     }.score-number{
         top:10%;
         left:26%;
+    }
+}@media (max-width: 468px){
+    .content{
+       display: flex;
+       flex-wrap: wrap;
+       align-items: center;
+       justify-content: center;
+    }.score-number{
+        top:10%;
+        left:30%;
+    }
+}@media (max-width: 387px){
+    .score-number{
+        top:10%;
+        left:35%;
+    }
+}@media (max-width: 387px){
+    .score-number{
+        top:10%;
+        left:43%;
     }
 }
