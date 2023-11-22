@@ -97,7 +97,8 @@ html{
 @media (max-width: 768px){
     .content{
         display: flex;
-        padding-bottom: 20px;
+        align-items: center;
+        justify-content: center;
     }i{
         font-size: 24px;
     }h1{
